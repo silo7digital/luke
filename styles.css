@@ -20,7 +20,8 @@ button { cursor: pointer; }
 .masthead { background: var(--charcoal); border-bottom: 1px solid rgb(244 233 215 / .27); }
 .masthead-inner, nav, .actions, .section-head, footer .wrap { display: flex; align-items: center; }
 .masthead-inner { min-height: 5.3rem; justify-content: space-between; gap: 1.5rem; }
-.brand { font: 2.05rem/.92 var(--headline); }
+.brand { display: flex; align-items: center; gap: .75rem; font: 2.05rem/.92 var(--headline); }
+.brand img { width: 3.6rem; height: auto; display: block; clip-path: polygon(50% 0%, 60% 7%, 72% 10%, 85% 5%, 99% 22%, 95% 34%, 98% 52%, 100% 69%, 96% 79%, 87% 86%, 62% 94%, 50% 100%, 38% 94%, 13% 86%, 4% 79%, 0% 69%, 2% 52%, 5% 34%, 1% 22%, 15% 5%, 28% 10%, 40% 7%); }
 .brand small { display: block; margin-top: .42rem; font: 500 .62rem/1 var(--utility); text-transform: uppercase; letter-spacing: .2em; }
 nav { gap: clamp(.9rem, 3vw, 3rem); font: 500 .88rem var(--utility); text-transform: uppercase; letter-spacing: .09em; }
 nav a { padding-block: .6rem; }
@@ -28,7 +29,7 @@ nav a:hover { color: var(--mustard); }
 .cart-toggle { border: 1px solid rgb(244 233 215 / .5); background: transparent; color: var(--cream); padding: .6rem .85rem; min-height: 44px; text-transform: inherit; }
 .cart-toggle span { margin-left: .35rem; color: var(--mustard); }
 .hero {
-  background: linear-gradient(90deg, rgb(26 26 26 / .82), rgb(26 26 26 / .2) 68%), var(--navy) url("assets/highway.jpg") center 53% / cover;
+  background: url("assets/weathering.png"), linear-gradient(90deg, rgb(26 26 26 / .82), rgb(26 26 26 / .2) 68%), var(--navy) url("assets/highway.jpg") center 53% / cover;
   border-bottom: .32rem solid var(--mustard);
 }
 .hero-inner { min-height: min(74svh, 47rem); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding-block: 3.8rem; }
@@ -45,10 +46,10 @@ h1 em { color: var(--mustard); font-style: normal; }
 .outline { color: inherit; border-color: currentColor; background: transparent; }
 .outline:hover { box-shadow: inset 0 -3px var(--mustard); }
 h2 { font-size: clamp(3.3rem, 7vw, 7.4rem); line-height: .83; }
-.mission { background: var(--cream); color: var(--navy); }
+.mission { background: var(--cream) url("assets/weathering.png"); color: var(--navy); }
 .mission-inner { display: grid; grid-template-columns: 1.4fr 1fr; align-items: end; gap: clamp(1.6rem, 7vw, 8rem); padding-block: clamp(3rem, 8vw, 7rem); }
 .mission-copy { max-width: 32ch; margin: 0; padding-top: 1rem; border-top: .25rem solid var(--rust); font-size: clamp(1.06rem, 1.8vw, 1.4rem); }
-.shop { padding-block: clamp(3rem, 7vw, 7rem); }
+.shop { background-image: url("assets/weathering.png"); padding-block: clamp(3rem, 7vw, 7rem); }
 .section-head { justify-content: space-between; flex-wrap: wrap; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--cream); padding-bottom: 1rem; margin-bottom: 1.4rem; }
 .section-head p { margin: 0; }
 .products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.7rem, 2.5vw, 2rem); }
@@ -64,7 +65,7 @@ h2 { font-size: clamp(3.3rem, 7vw, 7.4rem); line-height: .83; }
 .product-info .button:hover { color: var(--charcoal); background: var(--mustard); }
 .size { display: flex; align-items: center; gap: .5rem; }
 select, .custom input { background: var(--cream); color: var(--charcoal); border: 1px solid var(--navy); padding: .4rem; min-height: 44px; }
-.giving { background: var(--navy); border-top: .32rem solid var(--rust); }
+.giving { background: var(--navy) url("assets/weathering.png"); border-top: .32rem solid var(--rust); }
 .giving-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 6vw, 6rem); align-items: start; padding-block: clamp(3rem, 8vw, 7rem); }
 #giving-form { border-top: 1px solid var(--cream); padding-top: 1rem; }
 fieldset { margin: 0 0 1rem; padding: 0; border: 0; }
@@ -90,8 +91,9 @@ dialog h2 { font-size: 3rem; }
 @media (max-width: 650px) {
   .wrap { width: calc(100% - 2rem); }
   .masthead-inner { flex-wrap: wrap; gap: .8rem; padding-block: .85rem .5rem; }
+  .brand img { width: 2.85rem; }
   nav { width: 100%; justify-content: space-between; border-top: 1px solid rgb(244 233 215 / .27); padding-top: .45rem; }
-  .hero { background-position: 63% center; }
+  .hero { background-position: left top, center, 63% center; }
   .hero-inner { min-height: 31rem; justify-content: end; padding-block: 3rem; }
   h1 { font-size: clamp(3.65rem, 13.4vw, 5.5rem); }
   .mission-inner, .giving-inner { grid-template-columns: 1fr; }
