@@ -49,7 +49,13 @@ nav a:hover { color: var(--mustard); }
 .hero-inner { position: relative; min-height: min(74svh, 47rem); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding-block: 3.8rem; }
 .label { font: 500 .8rem/1.2 var(--utility); letter-spacing: .22em; text-transform: uppercase; margin: 0 0 1rem; }
 .giving .label { color: var(--mustard); }
-.hero .hero-verse { color: #fff; margin: 1.1rem 0 0; }
+.hero-title-block { display: grid; grid-template-columns: max-content 1fr; }
+.hero-title-block h1 { display: contents; }
+.hero-title-block h1 br { display: none; }
+.hero-title-block h1 em { display: contents; }
+.hero-title-block .hero-heading-first { grid-column: 1 / -1; }
+.hero-title-block .hero-heading-second { padding-right: .19em; }
+.hero .hero-verse { grid-column: 2; color: #fff; margin: .45rem 0 0; }
 h1, h2, h3 { font-family: var(--headline); font-weight: 400; margin: 0; }
 h1 { font-size: clamp(5rem, 12.4vw, 13rem); line-height: .76; letter-spacing: -.02em; }
 h1 em { color: var(--mustard); font-style: normal; }
