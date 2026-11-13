@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The 2 Mile Pastor and Second Mile Ministries. Explore giving and merchandise in the website demo.">
+<title>The 2 Mile Pastor | Second Mile Ministries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="shop.js" defer></script>
+</head>
+<body>
+<header class="masthead" id="top">
+  <div class="wrap masthead-inner">
+    <a class="brand" href="#top">The 2 Mile Pastor<small>Second Mile Ministries</small></a>
+    <nav aria-label="Main navigation">
+      <a href="#mission">Mission</a><a href="#shop">Shop</a><a href="#give">Give</a>
+      <button class="cart-toggle" id="open-cart" type="button">Cart <span id="cart-count">0</span></button>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-inner">
+      <p class="label">Matthew 5:41</p>
+      <h1 id="hero-title">Go the<br><em>second mile.</em></h1>
+      <p class="hero-line">Discipleship changes everything.</p>
+      <div class="actions">
+        <a class="button primary" href="#give">Give now <span aria-hidden="true">↗</span></a>
+        <a class="button outline" href="#shop">Shop merch</a>
+      </div>
+    </div>
+  </section>
+  <section class="mission" id="mission" aria-labelledby="mission-title">
+    <div class="wrap mission-inner">
+      <div>
+        <p class="label">James 1:22</p>
+        <h2 id="mission-title">Same people.<br>A further story.</h2>
+      </div>
+      <p class="mission-copy">Second Mile Ministries is about putting faith into practice. Hear the Word, live it out, and go further for the people around you.</p>
+    </div>
+  </section>
+  <section class="shop" id="shop" aria-labelledby="shop-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="shop-title">2MP Merch</h2>
+        <p>Demo catalog · Sample prices in USD</p>
+      </div>
+      <div class="products" id="products"></div>
+      <p id="shop-status" class="sr-only" role="status"></p>
+      <noscript>Enable JavaScript to use the demo store and giving form.</noscript>
+    </div>
+  </section>
+  <section class="giving" id="give" aria-labelledby="giving-title">
+    <div class="wrap giving-inner">
+      <div>
+        <p class="label">Second Mile Ministries</p>
+        <h2 id="giving-title">Give now.</h2>
+        <p>Support the work of Second Mile Ministries.</p>
+      </div>
+      <form id="giving-form">
+        <fieldset>
+          <legend>Frequency</legend>
+          <div class="choices">
+            <label><input name="frequency" type="radio" value="one-time" checked><span>One time</span></label>
+            <label><input name="frequency" type="radio" value="monthly"><span>Monthly</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Amount (USD)</legend>
+          <div class="choices">
+            <label><input name="preset" type="radio" value="25"><span>$25</span></label>
+            <label><input name="preset" type="radio" value="50" checked><span>$50</span></label>
+            <label><input name="preset" type="radio" value="100"><span>$100</span></label>
+            <label><input name="preset" type="radio" value="custom"><span>Custom</span></label>
+          </div>
+          <label id="custom-wrap" class="custom" hidden>Custom amount (USD)
+            <input name="customAmount" type="number" inputmode="decimal" min="1" max="100000" step="0.01" disabled required>
+          </label>
+        </fieldset>
+        <button class="button primary" type="submit">Simulate donation</button>
+        <p class="demo-note">Demo only. No payment details are collected.</p>
+        <p id="giving-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><a href="#top">The 2 Mile Pastor / Second Mile Ministries</a><span>James 1:22</span></div></footer>
+<dialog id="cart" aria-labelledby="cart-title">
+  <div class="cart-head">
+    <h2 id="cart-title">Your cart</h2>
+    <form method="dialog"><button class="button outline" aria-label="Close cart" autofocus>Close</button></form>
+  </div>
+  <div id="cart-lines"></div>
+  <div id="cart-summary" hidden>
+    <p class="subtotal"><strong>Subtotal</strong><strong id="subtotal"></strong></p>
+    <button id="checkout" class="button primary" type="button">Simulate checkout</button>
+  </div>
+  <p class="demo-note">Demo only. No orders or payments are processed.</p>
+  <p id="cart-status" role="status"></p>
+</dialog>
+</body>
+</html>
