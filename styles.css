@@ -21,7 +21,8 @@ button { cursor: pointer; }
 .masthead-inner, nav, .actions, .section-head, footer .wrap { display: flex; align-items: center; }
 .masthead-inner { min-height: 5.3rem; justify-content: space-between; gap: 1.5rem; }
 .brand { display: flex; align-items: center; gap: .75rem; font: 2.05rem/.92 var(--headline); }
-.brand img { width: 3.6rem; height: auto; display: block; clip-path: polygon(50% 0%, 60% 7%, 72% 10%, 85% 5%, 99% 22%, 95% 34%, 98% 52%, 100% 69%, 96% 79%, 87% 86%, 62% 94%, 50% 100%, 38% 94%, 13% 86%, 4% 79%, 0% 69%, 2% 52%, 5% 34%, 1% 22%, 15% 5%, 28% 10%, 40% 7%); }
+.brand img { width: 3.6rem; height: auto; display: block; }
+.brand img, .hero::before { clip-path: polygon(50% 0%, 60% 7%, 72% 10%, 85% 5%, 99% 22%, 95% 34%, 98% 52%, 100% 69%, 96% 79%, 87% 86%, 62% 94%, 50% 100%, 38% 94%, 13% 86%, 4% 79%, 0% 69%, 2% 52%, 5% 34%, 1% 22%, 15% 5%, 28% 10%, 40% 7%); }
 .brand small { display: block; margin-top: .42rem; font: 500 .62rem/1 var(--utility); text-transform: uppercase; letter-spacing: .2em; }
 nav { gap: clamp(.9rem, 3vw, 3rem); font: 500 .88rem var(--utility); text-transform: uppercase; letter-spacing: .09em; }
 nav a { padding-block: .6rem; }
@@ -29,12 +30,26 @@ nav a:hover { color: var(--mustard); }
 .cart-toggle { border: 1px solid rgb(244 233 215 / .5); background: transparent; color: var(--cream); padding: .6rem .85rem; min-height: 44px; text-transform: inherit; }
 .cart-toggle span { margin-left: .35rem; color: var(--mustard); }
 .hero {
+  position: relative;
   background: url("assets/weathering.png"), linear-gradient(90deg, rgb(26 26 26 / .82), rgb(26 26 26 / .2) 68%), var(--navy) url("assets/highway.jpg") center 53% / cover;
   border-bottom: .32rem solid var(--mustard);
 }
-.hero-inner { min-height: min(74svh, 47rem); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding-block: 3.8rem; }
+.hero::before {
+  content: "";
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(8rem, 22vw, 23rem);
+  aspect-ratio: 408 / 394;
+  background: url("assets/2mp-sign.jpg") center / cover;
+  opacity: .9;
+  pointer-events: none;
+}
+.hero-inner { position: relative; min-height: min(74svh, 47rem); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding-block: 3.8rem; }
 .label { font: 500 .8rem/1.2 var(--utility); letter-spacing: .22em; text-transform: uppercase; margin: 0 0 1rem; }
-.hero .label, .giving .label { color: var(--mustard); }
+.giving .label { color: var(--mustard); }
+.hero .hero-verse { color: #fff; margin: 1.1rem 0 0; }
 h1, h2, h3 { font-family: var(--headline); font-weight: 400; margin: 0; }
 h1 { font-size: clamp(5rem, 12.4vw, 13rem); line-height: .76; letter-spacing: -.02em; }
 h1 em { color: var(--mustard); font-style: normal; }
@@ -94,6 +109,7 @@ dialog h2 { font-size: 3rem; }
   .brand img { width: 2.85rem; }
   nav { width: 100%; justify-content: space-between; border-top: 1px solid rgb(244 233 215 / .27); padding-top: .45rem; }
   .hero { background-position: left top, center, 63% center; }
+  .hero::before { top: 1.4rem; right: 1rem; width: clamp(6rem, 26vw, 9rem); transform: none; }
   .hero-inner { min-height: 31rem; justify-content: end; padding-block: 3rem; }
   h1 { font-size: clamp(3.65rem, 13.4vw, 5.5rem); }
   .mission-inner, .giving-inner { grid-template-columns: 1fr; }
